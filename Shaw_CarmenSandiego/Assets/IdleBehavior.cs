@@ -12,7 +12,10 @@ public class IdleBehavior : StateMachineBehaviour
     {
         Debug.Log("Idle");
         dialogue = GameObject.Find("ConsoleText").GetComponent<Text>();
-        dialogue.text = "Going where?";
+        if (animator.GetBool("eventOccured"))
+        {
+            dialogue.text = "Going where?";
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

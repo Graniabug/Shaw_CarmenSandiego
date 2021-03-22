@@ -62,7 +62,7 @@ public class EventManager : MonoBehaviour
                 NPCs[i].GetComponent<Animator>().SetInteger("dialogueIndex", numCreatureNPCs);
                 numCreatureNPCs++;
             }
-            else if (i == (locationIndex + 2) || i == (locationIndex - 2))
+            else if (i == (locationIndex + 2) || i == (locationIndex - 2) || (locationIndex == 0 && i == (locationIndex + 3)))
             {
                 print(i + ": knows about location");
                 NPCs[i].GetComponent<Animator>().SetInteger("proximity", 1);
