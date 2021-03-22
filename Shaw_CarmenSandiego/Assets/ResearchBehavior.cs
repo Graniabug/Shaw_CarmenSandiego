@@ -48,24 +48,24 @@ public class ResearchBehavior : MonoBehaviour
             {
                 case 0:
                     dialogue.text += "\nCat sidhe are faeries that take the form of large black cats, sometimes with white spots on their chests.  " +
-                        "Villagers used to keep watch to make sure the cat doesn’t cross the bodies of the dead before they are buried for fear it’d steal the soul of the dead. " +
-                        "\nTo prevent this, they would play games to destract the cat, extigush all sources of warmth, in which the cat likes to cuddle, and even leave out milk.";
+                        "Villagers used to keep watch to make sure the cat doesn’t cross the bodies of the dead before they were buried for fear it’d steal the soul of the dead. " +
+                        "\nTo prevent this, they would play games to destract the cat, extigush all sources of warmth (in which the cat likes to cuddle), and even leave out milk.";
                     break;
                 case 1:
-                    dialogue.text += "\nCu sidhe are faeries that take the form of large black or green dogs.  They are the servents of the aes sidhe, and are known to steal new human mothers to care for faery children.  " +
+                    dialogue.text += "\nCu sidhe are faeries that take the form of large black or green dogs.  They are the servants of the aes sidhe, and are known to steal new human mothers to care for faery children.  " +
                         "In some cases they are also regarded as arbiters of death, much like hellhounds or even grim reapers, as they may guide the dead to the afterlife.  " +
-                        "Most terrifyingly, they're howl, while it serves as a warning to all who hear it, is deadly when it is heard in threes.";
+                        "Most terrifyingly, their howl, while it serves as a warning to all who hear it, is deadly when it is heard in threes.";
                     break;
                 case 2:
-                    dialogue.text += "\nAes sidhe are what people typically think of as faeries.  They are beautiful human-looking peeople who live underground in mounds.  " +
-                        "Care must be taken to not tresspass on their land or otherwise insult them, as in their anger they will retaliate.";
+                    dialogue.text += "\nAes sidhe are what people typically think of as faeries.  They are beautiful human-looking people who live underground in mounds.  " +
+                        "Care must be taken to not trespass on their land or otherwise insult them, as in their anger they will retaliate.";
                     break;
                 case 3:
-                    dialogue.text += "\nMorrigan is the goddess of war and death.  She is a shapeshifter, seen as often as a blackbird as she is an a human woman.  " +
-                        "She follows death, and has been known to prophesize the deaths of men by washing their bloody clothes in the sight of those who know him.";
+                    dialogue.text += "\nMorrigan is the goddess of war and death.  She is a shapeshifter, seen as often as a blackbird as she is a human woman.  " +
+                        "She follows death, and has been known to prophesize the deaths of men by washing his bloody clothes in the sight of those who know him.";
                     break;
                 case 4:
-                    dialogue.text += "\nKelpies are shapesgifting creatures seen both as handsome human men and white horses.  " +
+                    dialogue.text += "\nKelpies are shapeshifting creatures seen both as handsome human men and beautiful white horses.  " +
                         "In both cases they attempt to lure children and young women into bodies of water using their beauty and, if sucessful, eat them once they've drowned.";
                     break;
             }

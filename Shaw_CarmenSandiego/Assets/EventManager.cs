@@ -359,7 +359,7 @@ public class EventManager : MonoBehaviour
                     console.text += "  You keep your distance and begin fishing in the lake.  When you catch something, you offer it to the cat, who takes it and runs.  It seems appeased.";
                     break;
                 case 3:  //The faery circle
-                    console.text += "  You leave an offering of some food to win the cat's good favor.  It eats, and then dissapears into shadows.  The townspeaople never see it again.";
+                    console.text += "  You leave an offering of some food to win the cat's good favor.  It eats, and then dissapears into shadows.  The townspeople never see it again.";
                     break;
                 case 4:   //the graveyard
                     console.text += "  This is the worst possible place the cat sidhe could be.  You collect the children of the town to play some games, destracting the cat and allowing you to lead it away from the town.";
@@ -445,7 +445,7 @@ public class EventManager : MonoBehaviour
                     break;
                 case 2:  //The lake
                     console.text += "  As you approach, a white horse climbs from under the water with long, gliding steps.  " +
-                        "You tell him plainly that you shall not follow him, and nor shall any one else.  He shakes his head, but re-submerges himself anyway.";
+                        "You tell him plainly that you shall not follow him, and nor shall anyone else.  He shakes his head, but re-submerges himself anyway.";
                     break;
                 case 3:  //The faery circle
                     console.text += "  A man with water weeds dripping from his white-blonde hair kneels on the ground just outside the ring.  You ask him politely to leave this town alone.  To your surprise, he obliges.";

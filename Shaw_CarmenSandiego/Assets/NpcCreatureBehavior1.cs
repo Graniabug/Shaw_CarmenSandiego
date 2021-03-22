@@ -77,7 +77,7 @@ public class NpcCreatureBehavior1 : StateMachineBehaviour
 
         if (currentEvent.GetCreature() == 4) //if the event was caused by a kelpie...
         {
-            couldSay = "A white hourse with no rider trotted through town once.  My, the children cooed after it, as beautiful as it was.";
+            couldSay = "A white horse with no rider trotted through town once.  My, the children cooed after it, as beautiful as it was.";
         }
     }
 }
