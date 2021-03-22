@@ -22,6 +22,7 @@ public class EventManager : MonoBehaviour
 {
     private string startText = "The townspeople are all talking about something mysterious having happened!  Why don't you go see what it is?";  //the text that prints first when the game starts
     private int[] canGoToCurrently = new int[3];  //an array of the places which can be travelled to from where the player currently is (currently chosen at random)
+    private int currentPlayerLocation = 0;
 
     public EventContainer currentEvent;  //a reference to the object which contains info about the current event
     public Text console;  //a reference to the text object to which dialogue prints
@@ -44,9 +45,10 @@ public class EventManager : MonoBehaviour
     void Start()
     {
         int numCreatureNPCs = 0;  //contains the number of NPCs that currently know about the creature.  Should max at 2
-        int creatureIndex = Random.Range(0, 4);
-        int locationIndex = Random.Range(0, 4);
+        int creatureIndex = Random.Range(0, 5);
+        int locationIndex = Random.Range(0, 5);
         currentEvent.SetEvent(creatureIndex, locationIndex);
+        currentPlayerLocation = Random.Range(0, 5);
         print(currentEvent.GetTextCreature() + ", " + currentEvent.GetTextLocation());
 
         for (int i = 0; i < NPCs.Length; i++)
@@ -106,21 +108,24 @@ public class EventManager : MonoBehaviour
             NPCs[i].GetComponent<Animator>().SetBool("talkedTo", false);
         }
 
-            //get locations that can currently be travelled to at random.
-            canGoToCurrently[0] = Random.Range(0, buttons.Length);
-        print(canGoToCurrently[0]);
-        do
+        //get locations that can currently be travelled to based on the player's current location
+        canGoToCurrently[0] = currentPlayerLocation;
+        if (currentPlayerLocation < 4)
         {
-            canGoToCurrently[1] = Random.Range(0, 4);
+            canGoToCurrently[1] = currentPlayerLocation + 1;
         }
-        while (canGoToCurrently[1] == canGoToCurrently[0]);
-        print(canGoToCurrently[1]);
-        do
+        else
         {
-            canGoToCurrently[2] = Random.Range(0, 4);
+            canGoToCurrently[1] = currentPlayerLocation - 2;
         }
-        while ((canGoToCurrently[2] == canGoToCurrently[0]) && (canGoToCurrently[2] == canGoToCurrently[1]));
-        print(canGoToCurrently[2]);
+        if (currentPlayerLocation > 0)
+        {
+            canGoToCurrently[2] = currentPlayerLocation - 1;
+        }
+        else
+        {
+            canGoToCurrently[2] = currentPlayerLocation + 2;
+        }
 
         //activate the apropriate buttons
         for (int i = 0; i < buttons.Length; i++)
@@ -181,6 +186,7 @@ public class EventManager : MonoBehaviour
 
         NPCs[0].GetComponent<Animator>().SetBool("talkedTo", true);
         locationText.text = "The Wood";
+        currentPlayerLocation = 0;
 
         if (currentEvent.creatureFound && currentEvent.GetLocation() == 0)
         {
@@ -210,6 +216,7 @@ public class EventManager : MonoBehaviour
         }
         goToButton.SetActive(true);
         researchButton.SetActive(true);
+        currentPlayerLocation = 1;
 
         NPCs[1].GetComponent<Animator>().SetBool("talkedTo", true);
         locationText.text = "The Town Square";
@@ -245,6 +252,7 @@ public class EventManager : MonoBehaviour
 
         NPCs[2].GetComponent<Animator>().SetBool("talkedTo", true);
         locationText.text = "The Lake";
+        currentPlayerLocation = 2;
 
         if (currentEvent.creatureFound && currentEvent.GetLocation() == 2)
         {
@@ -277,6 +285,7 @@ public class EventManager : MonoBehaviour
 
         NPCs[3].GetComponent<Animator>().SetBool("talkedTo", true);
         locationText.text = "The Faery Circle";
+        currentPlayerLocation = 3;
 
         if (currentEvent.creatureFound && currentEvent.GetLocation() == 3)
         {
@@ -309,6 +318,7 @@ public class EventManager : MonoBehaviour
 
         NPCs[4].GetComponent<Animator>().SetBool("talkedTo", true);
         locationText.text = "The Graveyard";
+        currentPlayerLocation = 4;
 
         if (currentEvent.creatureFound && currentEvent.GetLocation() == 4)
         {

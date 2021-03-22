@@ -121,14 +121,6 @@ public class ResearchBehavior : MonoBehaviour
                 dialogue.text = "That's not enough information yet.";
                 break;
         }
-        /*if (dropdown1.value == currentEvent.GetCreature())
-        {
-            option1Correct = true;
-        }
-        else
-        {
-            dialogue.text = "That's not enough information yet.";
-        }*/
     }
 
     /**************************************************
@@ -176,14 +168,6 @@ public class ResearchBehavior : MonoBehaviour
                 dialogue.text = "That's not enough information yet.";
                 break;
         }
-        /*if (dropdown2.value == currentEvent.GetCreature())
-        {
-            option2Correct = true;
-        }
-        else
-        {
-            dialogue.text = "That's not enough information yet.";
-        }*/
     }
 
     /**************************************************
@@ -232,13 +216,5 @@ public class ResearchBehavior : MonoBehaviour
                 dialogue.text = "That's not enough information yet.";
                 break;
         }
-        /*if (dropdown3.value == currentEvent.GetCreature())
-        {
-            option3Correct = true;
-        }
-        else
-        {
-            dialogue.text = "That's not enough information yet.";
-        }*/
     }
 }

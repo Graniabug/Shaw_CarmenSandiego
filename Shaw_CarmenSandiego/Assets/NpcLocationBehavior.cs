@@ -79,7 +79,7 @@ public class NpcLocationBehavior : StateMachineBehaviour
         {
             couldSay[0] = "I never really believed the superstition around a circle of mushrooms, but maybe there is something to it...";
             couldSay[1] = "I heard shouts coming from near the faery circle!";
-            couldSay[2] = "The faery cicle outside town has always worried me.  Guess now I have reason!";
+            couldSay[2] = "The faery circle outside town has always worried me.  Guess now I have reason!";
         }
 
         if (currentEvent.GetLocation() == 4) //if the event happened in the graveyard...
