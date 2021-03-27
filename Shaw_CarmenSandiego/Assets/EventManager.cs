@@ -7,9 +7,9 @@
  * Created By: Kayleigh Shaw
  * Created On: 3/10/2021
  * 
- * Last Edit: Add comments
+ * Last Edit: Added color changing backgrounds
  * Last Edited By: Kayleigh Shaw
- * Last Edited On: 3/22/2021
+ * Last Edited On: 3/27/2021
  * ************************************************************************************************************************/
 
 using System.Collections;
@@ -34,6 +34,7 @@ public class EventManager : MonoBehaviour
     public GameObject locationMenu;  //a reference to the parent object of all the location menu UI
     public GameObject[] buttons;  //an array of location buttons
     public GameObject playAgainButton;  //a reference to a button which reloads the scene so teh player can play again
+    public Image background;  //a reference to the main camera in the scene
 
     /**************************************************
     * Name: Start
@@ -45,11 +46,14 @@ public class EventManager : MonoBehaviour
     void Start()
     {
         int numCreatureNPCs = 0;  //contains the number of NPCs that currently know about the creature.  Should max at 2
-        int creatureIndex = Random.Range(0, 5);
-        int locationIndex = Random.Range(0, 5);
+        int creatureIndex = Random.Range(0, 4);
+        int locationIndex = Random.Range(0, 4);
         currentEvent.SetEvent(creatureIndex, locationIndex);
-        currentPlayerLocation = Random.Range(0, 5);
+        currentPlayerLocation = Random.Range(0, 4);
         print(currentEvent.GetTextCreature() + ", " + currentEvent.GetTextLocation());
+
+        //set default background color
+        background.color = new Color(0.35f, 0.45f, 0.3f, 1f);
 
         for (int i = 0; i < NPCs.Length; i++)
         {
@@ -99,6 +103,9 @@ public class EventManager : MonoBehaviour
     * ************************************************/
     public void GoToButton()
     {
+        //change background color
+        background.color = new Color(0.35f, 0.45f, 0.3f, 1f);
+
         //make previously active UI invisible
         goToButton.SetActive(false);
         researchButton.SetActive(false);
@@ -176,6 +183,10 @@ public class EventManager : MonoBehaviour
     * ************************************************/
     public void WoodsButtonBehavior()
     {
+        //change background color
+        background.color = new Color(0.16f, 0.23f, 0.13f, 1f);
+
+        //deactivate travel buttons, activate go to and research buttons
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].GetComponent<Button>().interactable = true;
@@ -209,6 +220,10 @@ public class EventManager : MonoBehaviour
     * ************************************************/
     public void SquareButtonBehavior()
     {
+        //change background color
+        background.color = new Color(0.46f, 0.44f, 0.34f, 1f);
+
+        //deactivate travel buttons, activate go to and research buttons
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].GetComponent<Button>().interactable = true;
@@ -242,6 +257,10 @@ public class EventManager : MonoBehaviour
     * ************************************************/
     public void LakeButtonBehavior()
     {
+        //change background color
+        background.color = new Color(0f, 0.75f, 0.76f, 1f);
+
+        //deactivate travel buttons, activate go to and research buttons
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].GetComponent<Button>().interactable = true;
@@ -275,6 +294,10 @@ public class EventManager : MonoBehaviour
     * ************************************************/
     public void FaeryButtonBehavior()
     {
+        //change background color
+        background.color = new Color(0.36f, 0.27f, 0.19f, 1f);
+
+        //deactivate travel buttons, activate go to and research buttons
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].GetComponent<Button>().interactable = true;
@@ -308,6 +331,10 @@ public class EventManager : MonoBehaviour
     * ************************************************/
     public void GraveButtonBehavior()
     {
+        //change background color
+        background.color = new Color(0.25f, 0.25f, 0.25f, 1f);
+
+        //deactivate travel buttons, activate go to and research buttons
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].GetComponent<Button>().interactable = true;

@@ -112,7 +112,7 @@ public class EventContainer : MonoBehaviour
             case 4:
                 return "graveyard";
         }
-        return "no creature set";
+        return "no location set";
     }
 
     /**************************************************
